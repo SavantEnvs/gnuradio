@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: prefs
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/prefs/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_prefs
+    libfuzzer: true
+    timeout: 30

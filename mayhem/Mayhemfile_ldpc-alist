@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: ldpc-alist
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ldpc-alist/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_ldpc_alist
+    libfuzzer: true
+    timeout: 30

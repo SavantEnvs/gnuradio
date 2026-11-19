@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: pmt-deserialize
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/pmt-deserialize/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_pmt_deserialize
+    libfuzzer: true
+    timeout: 30

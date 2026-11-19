@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: protocol-parser
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/protocol-parser/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_protocol_parser
+    libfuzzer: true
+    timeout: 30

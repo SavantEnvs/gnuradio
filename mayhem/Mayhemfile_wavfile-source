@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: wavfile-source
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wavfile-source/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_wavfile_source
+    libfuzzer: true
+    timeout: 30

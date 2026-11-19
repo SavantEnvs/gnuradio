@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: pdu-handlers
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/pdu-handlers/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_pdu_handlers
+    libfuzzer: true
+    timeout: 30

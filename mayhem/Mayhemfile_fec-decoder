@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: fec-decoder
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fec-decoder/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_fec_decoder
+    libfuzzer: true
+    timeout: 30

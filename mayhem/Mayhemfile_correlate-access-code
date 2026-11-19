@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: correlate-access-code
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/correlate-access-code/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_correlate_access_code
+    libfuzzer: true
+    timeout: 30

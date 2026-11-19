@@ -1,0 +1,10 @@
+version: '1.0'
+project: savantenvs/gnuradio
+target: dvbt-rx
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dvbt-rx/testsuite
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_dvbt_rx
+    libfuzzer: true
+    timeout: 30
